@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new event</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src = "form.js">	</script>
+</head>
+<body>
+<h1> Create a New Event</h1>
+    <form>
+        <fieldset>
+            <legend><strong>Personal Information</strong></legend>
+            <label for="fname">First name:</label>
+            <input class="inx" type="text" id="fname" required/> <span style="display:inline-block; width:20px;"></span>
+            <label for="lname">Last name:</label>
+            <input class="inx" type="text" id="lname" required/><span style="display:inline-block; width:20px;"></span>
+            <label for="fname">Contact number:</label>
+            <input class="inx" type="number" id="pocnum" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11"></input>
+        </fieldset>
+        <br>
+        <fieldset>
+    <legend><strong> Event Details</strong></legend>
+    <label for="type">Event Type:</label>
+    <select class="inx" id="type" name="event-type">
+      <option value="conference">Conference</option>
+      <option value="seminar">Seminar</option>
+      <option value="meeting">Meeting</option>
+      <option value="teambldg">Team-Building</option>
+      <option value="presscon">Press Conference</option>
+      <option value="themeparty">Theme Party</option>
+      <option value="awarding">Awarding</option>
+      <option value="wedding">Wedding</option>
+      <option value="birthday">Birthday</option>
+      <option value="family">Family</option>
+    </select>
+    <br><br>
+    <label for="title">Event Title:</label>
+    <input type ="text" class="inx" id="etitle"required></input><br><br>
+    <label for="date">Event Dates:</label>
+    <input type="date" class="inx" id="startdate" required></input> to
+    <input type="date" class="inx" id="enddate" required oninput="conf()"></input><br><br>
+    <label for="postdate">Posting date:</label>
+    <input type="date" class="inx" id="postdate"></input>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend> <strong>Additional Information</strong></legend>
+        <div>
+        <input type="checkbox" class="inx" id="in1"></input>
+        <label for="in1">Is Registration required?</label><br><br>
+    </div>    
+    <div>
+        <input type="checkbox" class="inx" id="in2" name="in2" onchange="val()"></input>
+        <label for="in2">Is this event associated with any Family Programs?</label>
+        <br>
+        <div style="display:none" id="div1">
+            <label for="org"> Organization name: </label>
+            <input type="text" class="inx" id="org" required></input><br><br>
+            <label for="prog" > Program title: </label>
+            <input type="text" class="inx" id="prog" required></input>
+        </div>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" id="in3" class="inx" name="in3" onchange="val2()"></input>
+        <label for="in3">Upon Registration Completion, Are users to receive an Auto generated Email?</label><br>
+            <div style="display:none" id="div2">
+            Auto Generated E-mail:<br>
+            <textarea id="aemai" class="inx" cols="100" rows = "4" required></textarea><br>
+            
+        </div>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" class="inx" id="in4" onchange="val3()"></input>
+        <label for="in4">Is there a Point of Contact?</label><br>
+        <div style="display:none" id="div3">
+            <label for="poc"> Point of Contact Name: </label>
+            <input type="text" class="inx" id="poc" required></input><br><br>
+            <label for="pocnum" > Point of Contact Number: </label>
+            <input type="number" class="inx" id="pocnum" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11"></input>
+        </div>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" id="in5" class="inx" onchange="val4()"></input>
+        <label for="in5">Is there a Hosting Command Point of Contact?</label><br>
+        <div style="display:none" id="div4">
+            <label for="poc"> Point of Contact Name: </label>
+            <input class="inx" type="text" id="poc" required></input><br><br>
+            <label for="pocnum" > Point of Contact Number: </label>
+            <input class="inx" type="number" id="pocnum" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11"></input>
+        </div>
+    </div>
+    </fieldset>
+    <br>
+    <input type = "submit" id="sub" value = "Create Event"/>
+    <input type = "reset" id="can" value = "Cancel"/>
+</form>
+</body>
+</html>
