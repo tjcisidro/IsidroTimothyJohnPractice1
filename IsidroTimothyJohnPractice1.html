@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a new event</title>
+    <title>Event Maker</title>
     <link rel="stylesheet" href="form.css">
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -13,16 +13,6 @@
 <body>
 <h1> Create a New Event</h1>
     <form>
-        <fieldset>
-            <legend><strong>Personal Information</strong></legend>
-            <label for="fname">First name:</label>
-            <input class="inx" type="text" id="fname" required/> <span style="display:inline-block; width:20px;"></span>
-            <label for="lname">Last name:</label>
-            <input class="inx" type="text" id="lname" required/><span style="display:inline-block; width:20px;"></span>
-            <label for="fname">Contact number:</label>
-            <input class="inx" type="number" id="pocnum" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11"></input>
-        </fieldset>
-        <br>
         <fieldset>
     <legend><strong> Event Details</strong></legend>
     <label for="type">Event Type:</label>
@@ -99,7 +89,7 @@
     </div>
     </fieldset>
     <br>
-    <input type = "submit" id="sub" value = "Create Event"/>
+    <input type = "submit" id="sub" value = "Create Event" onclick="subm()" />
     <input type = "reset" id="can" value = "Cancel"/>
 </form>
 </body>

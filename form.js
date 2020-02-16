@@ -32,3 +32,9 @@ function conf(){
         document.getElementById('enddate').value = null;
     }
 }
+
+function subm(){
+   
+    alert("The event has been submitted successfully!");
+
+}
